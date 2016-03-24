@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    
+<hibernate-configuration>
+	<session-factory>
+		<!-- Affiche les logs SQL -->
+<!--		<property name="show_sql">true</property>-->
+<!--		<property name="hibernate.format_sql">true</property>-->
+<!--		<property name="use_sql_comments">true</property>-->
+
+	<!--  Paramètres de connexion à la base de données -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> 
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/db_trisel</property>
+		<property name="hibernate.connection.username">moulin-t</property>
+		<property name="hibernate.connection.password">mythibaud</property>
+
+		<!-- Comportement pour la conservation des tables -->
+		<property name="hbm2ddl.auto">validate</property>
+
+		<!-- Fichiers à mapper -->
+		
+		<mapping class="com.metier.TypeDechet" />
+		<mapping class="com.metier.Levee" />
+		<mapping class="com.metier.Habitation" />
+		<mapping class="com.metier.Poubelle" />
+		<mapping class="com.metier.Facture" />
+		<mapping class="com.metier.Usager" />
+		<mapping class="com.metier.Utilisateur" />
+		
+	</session-factory>
+</hibernate-configuration>
